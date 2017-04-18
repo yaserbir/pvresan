@@ -1,5 +1,5 @@
 <?php
-define('API_KEY','توکن شما');
+define('API_KEY','299208891:AAH8retKCa6_UCiOo1dg43yhpyJduESg2As');
 //----######------
 function makereq($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -53,7 +53,7 @@ $textmessage = isset($update->message->text)?$update->message->text:'';
 $txtmsg = $update->message->text;
 $reply = $update->message->reply_to_message->forward_from->id;
 $stickerid = $update->message->reply_to_message->sticker->file_id;
-$admin = ایدی عددی شما;
+$admin = 110638500;
 $step = file_get_contents("data/".$from_id."/step.txt");
 $ban = file_get_contents('data/banlist.txt');
 //-------
@@ -87,11 +87,11 @@ function save($filename,$TXTdata)
 	fclose($myfile);
 	}
 //===========
-$inch = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=@Channel&user_id=".$from_id);
+$inch = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=@turk_links&user_id=".$from_id);
 	
 	if (strpos($inch , '"status":"left"') !== false ) {
 SendMessage($chat_id,"برای استفاده از ربات اول در کانال ما عضو شوید.
-@Channel");
+@turk_links");
 }
 if (strpos($ban , "$from_id") !== false  ) {
 SendMessage($chat_id,"You Are Banned From Server.🤓\nDon't Message Again...😎\n➖➖➖➖➖➖➖➖➖➖\nدسترسی شما به این سرور مسدود شده است.🤓\nلطفا پیام ندهید...😎");
@@ -120,7 +120,7 @@ elseif(isset($update->callback_query)){
             'reply_markup'=>json_encode([
                 'inline_keyboard'=>[
                     [
-                        ['text'=>"به کانال ما بپیوندید - Pease join to my channel",'url'=>"https://telegram.me/channel"]
+                        ['text'=>"به کانال ما بپیوندید - Pease join to my channel",'url'=>"https://telegram.me/turk_links"]
                     ]
                 ]
             ])
@@ -136,7 +136,7 @@ elseif(isset($update->callback_query)){
             'reply_markup'=>json_encode([
                 'inline_keyboard'=>[
                     [
-                        ['text'=>"به کانال ما بپیوندید - Pleas join to my channel",'url'=>"https://telegram.me/channel"]
+                        ['text'=>"به کانال ما بپیوندید - Pleas join to my channel",'url'=>"https://telegram.me/turk_links"]
                     ]
                 ]
             ])
@@ -234,7 +234,7 @@ $token = $textmessage ;
 		$source = str_replace("**TOKEN**",$token,$source);
 		$source = str_replace("**ADMIN**",$from_id,$source);
 		save("bots/$un/index.php",$source);	
-		file_get_contents("http://api.telegram.org/bot".$token."/setwebhook?url=https://webhook/bots/$un/index.php");
+		file_get_contents("http://api.telegram.org/bot".$token."/setwebhook?url=https://yaserbir_ml/bots/$un/index.php");
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
@@ -298,7 +298,7 @@ Your Robot Has ben Created
 		$source = str_replace("**TOKEN**",$token,$source);
 		$source = str_replace("**ADMIN**",$from_id,$source);
 		save("bots/$un/index.php",$source);	
-		file_get_contents("http://api.telegram.org/bot".$token."/setwebhook?url=https://webhook/bots/$un/index.php");
+		file_get_contents("http://api.telegram.org/bot".$token."/setwebhook?url=https://yaserbir_ml/bots/$un/index.php");
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
