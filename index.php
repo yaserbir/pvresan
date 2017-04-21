@@ -234,7 +234,7 @@ $token = $textmessage ;
 		$source = str_replace("**TOKEN**",$token,$source);
 		$source = str_replace("**ADMIN**",$from_id,$source);
 		save("bots/$un/index.php",$source);	
-		file_get_contents("http://api.telegram.org/bot".$token."/setwebhook?url=https://github.com/yaserbir/pvresan/settings/hooks/bots/$un/index.php");
+		file_get_contents("http://api.telegram.org/bot".$token."/setwebhook?url=https://github.com/yaserbir/pv/settings/hooks/bots/$un/index.php");
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
@@ -298,7 +298,7 @@ Your Robot Has ben Created
 		$source = str_replace("**TOKEN**",$token,$source);
 		$source = str_replace("**ADMIN**",$from_id,$source);
 		save("bots/$un/index.php",$source);	
-		file_get_contents("http://api.telegram.org/bot".$token."/setwebhook?url=https://github.com/yaserbir/pvresan/settings/hooks/bots/$un/index.php");
+		file_get_contents("http://api.telegram.org/bot".$token."/setwebhook?url=https://github.com/yaserbir/pv/settings/hooks/bots/$un/index.php");
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
